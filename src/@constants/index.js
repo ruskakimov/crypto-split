@@ -1,6 +1,9 @@
 export const colors = {
   black: '#222',
-  light_red: '#f57'
+  light_red: '#f57',
+  white: '#eee',
 }
 
-export const foo = 10
+export const fonts = {
+  monospace: 'monospace',
+}

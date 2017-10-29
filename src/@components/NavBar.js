@@ -19,7 +19,10 @@ const StyledNavLink = styled(NavLink)`
   padding: 20px;
   display: block;
   color: ${colors.black};
+  text-decoration: none;
+
   &.${props => props.activeClassName} {
+    color: ${colors.white};
     background: ${colors.light_red};
   }
 `
