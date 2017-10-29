@@ -1,8 +1,12 @@
 import React from 'react'
+import EntryForm from './EntryForm'
 
 const SplitPage = (props) => {
   return (
-    <h1>Split Page</h1>
+    <div>
+      <h1>Split page</h1>
+      <EntryForm/>
+    </div>
   )
 }
 

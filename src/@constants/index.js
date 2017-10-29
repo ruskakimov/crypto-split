@@ -7,3 +7,7 @@ export const colors = {
 export const fonts = {
   monospace: 'monospace',
 }
+
+
+// action types
+export const SUBMIT_MESSAGE = 'SUBMIT_MESSAGE'
