@@ -5,7 +5,10 @@
  * @return {string[]} - hex strings that XOR to passed str
  */
 export function generateHexKeys(str, num) {
-
+  const orig = stringToUint16(str)
+  const keys = Array(num - 1).fill(null).map(_ => generateKey(orig.length))
+  const xor = xorUint16([ ...keys, orig ])
+  return [ ...keys, xor ].map(uint16array => uint16ToHex(uint16array))
 }
 
 /**
