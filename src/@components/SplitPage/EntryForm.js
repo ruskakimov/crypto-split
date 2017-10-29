@@ -1,24 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { submitMessage } from '@actions'
+import { submitMessage, changeMessage } from '@actions'
 
 class EntryForm extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      message: ''
-    }
-  }
-
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.submitMessage(this.state.message)
+    this.props.submitMessage(this.props.message)
   }
 
   handleChange = (e) => {
-    this.setState({
-      message: e.target.value
-    })
+    this.props.submitMessage(e.target.value)
   }
 
   render() {
@@ -26,7 +17,7 @@ class EntryForm extends Component {
       <form onSubmit={this.handleSubmit}>
         <input
           type="text"
-          value={this.state.message}
+          value={this.props.message}
           onChange={this.handleChange}
         />
       </form>
@@ -34,5 +25,11 @@ class EntryForm extends Component {
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    message: state.split.message
+  }
+}
 
-export default connect(null, { submitMessage })(EntryForm)
+
+export default connect(mapStateToProps, { submitMessage })(EntryForm)

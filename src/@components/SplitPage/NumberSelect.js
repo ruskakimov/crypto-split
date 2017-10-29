@@ -18,7 +18,6 @@ class NumberSelect extends Component {
   }
 
   render() {
-    console.log(this.props.number)
     return (
       <select value={this.props.number} onChange={this.handleChange}>
         {this.generateOptions()}
