@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux'
+import splitPage from './splitPage'
 
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+  split: splitPage
 })
 
 export default rootReducer

@@ -1,4 +1,14 @@
 /**
+ * Generate hex keys that XOR to passed str
+ * @param {string} str
+ * @param {integer} num - number of keys to generate
+ * @return {string[]} - hex strings that XOR to passed str
+ */
+export function generateHexKeys(str, num) {
+
+}
+
+/**
  * Generate key of length
  * @param {integer} length
  * @return {uint16[]}
