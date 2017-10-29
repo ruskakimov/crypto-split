@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { CHANGE_NUMBER_OF_SPLIT_KEYS, SUBMIT_MESSAGE } from '@actions'
+import { CHANGE_NUMBER_OF_SPLIT_KEYS, SUBMIT_MESSAGE } from '@constants'
 import { generateHexKeys } from '@helpers'
 
 const splitPage = (state = {
