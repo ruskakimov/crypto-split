@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { changeNumberOfSplitKeys } from '@actions'
+import { MIN_KEYS, MAX_KEYS } from '@constants'
 
 class NumberSelect extends Component {
   handleChange = (e) => {
@@ -9,7 +10,7 @@ class NumberSelect extends Component {
 
   generateOptions() {
     const options = []
-    for (let value = 2; value < 10; value++) {
+    for (let value = MIN_KEYS; value <= MAX_KEYS; value++) {
       options.push(
         <option key={value} value={value}>{value}</option>
       )
