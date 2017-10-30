@@ -1,4 +1,16 @@
 /**
+ * Produce str from array of hex keys
+ * @param {string[]} hexArr
+ * @return {string} - original message
+ */
+export function produceMessage(hexArr) {
+  const keys = hexArr.map(hex => hexToUint16(hex))
+  return uint16ToString(
+    xorUint16(keys)
+  )
+}
+
+/**
  * Generate hex keys that XOR to passed str
  * @param {string} str
  * @param {integer} num - number of keys to generate
