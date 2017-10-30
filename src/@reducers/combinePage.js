@@ -3,25 +3,34 @@ import { produceMessage } from '@helpers'
 
 function handleSubmitKey(state) {
   const enteredKey = state.keyField.value
-  if (state.keys.length === 0 ||
-      state.keys[0].length === enteredKey.length)
-  {
-    const newKeys = [ enteredKey, ...state.keys ]
-    return {
-      message: produceMessage(newKeys),
-      keyField: {
-        value: '',
-        errorMessage: null
-      },
-      keys: newKeys
-    }
-  }
-  return {
+  const stateWithError = (errorMessage) => ({
     ...state,
     keyField: {
       ...state.keyField,
-      errorMessage: `Key does not match the length of previously entered keys!`
+      errorMessage
     }
+  })
+
+  if (enteredKey.length % 4) {
+    return stateWithError('Invalid key length!')
+  }
+
+  if (state.keys.length && state.keys[0].length !== enteredKey.length) {
+    return stateWithError('Key does not match the length of previously entered keys!')
+  }
+
+  if (state.keys.includes(enteredKey)) {
+    return stateWithError('Such key is already present!')
+  }
+
+  const newKeys = [ enteredKey, ...state.keys ]
+  return {
+    message: produceMessage(newKeys),
+    keyField: {
+      value: '',
+      errorMessage: null
+    },
+    keys: newKeys
   }
 }
 
