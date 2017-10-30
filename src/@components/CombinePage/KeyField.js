@@ -5,10 +5,18 @@ class KeyField extends Component {
   render() {
     return (
       <form>
-        <input type="text"/>
+        <input
+          value={this.props.value}
+          type="text"
+        />
+        {this.props.errorMessage}
       </form>
     )
   }
 }
 
-export default KeyField
+function mapStateToProps(state) {
+  return { ...state.combine.keyField }
+}
+
+export default connect(mapStateToProps)(KeyField)
