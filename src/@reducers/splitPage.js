@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux'
 import { SUBMIT_MESSAGE, CHANGE_NUMBER_OF_SPLIT_KEYS } from '@constants'
 import { generateHexKeys } from '@helpers'
 
