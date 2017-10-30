@@ -58,10 +58,9 @@ const combinePage = (state = {
     case DELETE_KEY:
       const newKeys = state.keys.slice()
       newKeys.splice(action.payload, 1)
-      console.log(produceMessage(newKeys))
       return {
-        message: produceMessage(newKeys),
         ...state,
+        message: produceMessage(newKeys),
         keys: newKeys
       }
     default:
