@@ -1,11 +1,12 @@
 import { CHANGE_KEY_FIELD_VALUE, SUBMIT_KEY } from '@constants'
 import { produceMessage } from '@helpers'
 
-function handleSubmitKey(state, action) {
+function handleSubmitKey(state) {
+  const enteredKey = state.keyField.value
   if (state.keys.length === 0 ||
-      state.keys[0].length === action.payload.length)
+      state.keys[0].length === enteredKey.length)
   {
-    const newKeys = [ action.payload, ...state.keys ]
+    const newKeys = [ enteredKey, ...state.keys ]
     return {
       message: produceMessage(newKeys),
       keyField: {
