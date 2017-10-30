@@ -4,6 +4,7 @@
  * @return {string} - original message
  */
 export function produceMessage(hexArr) {
+  if (hexArr.length === 0) return ''
   const keys = hexArr.map(hex => hexToUint16(hex))
   return uint16ToString(
     xorUint16(keys)

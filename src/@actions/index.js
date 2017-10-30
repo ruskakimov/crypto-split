@@ -3,6 +3,7 @@ import {
   CHANGE_NUMBER_OF_SPLIT_KEYS,
   CHANGE_KEY_FIELD_VALUE,
   SUBMIT_KEY,
+  DELETE_KEY,
 } from '@constants'
 
 export const submitMessage = (message) => {
@@ -31,5 +32,12 @@ export const changeKeyFieldValue = (value) => {
 export const submitKey = () => {
   return {
     type: SUBMIT_KEY
+  }
+}
+
+export const deleteKey = (index) => {
+  return {
+    type: DELETE_KEY,
+    payload: index
   }
 }

@@ -15,6 +15,7 @@ export const CHANGE_NUMBER_OF_SPLIT_KEYS = 'CHANGE_NUMBER_OF_SPLIT_KEYS'
 
 export const CHANGE_KEY_FIELD_VALUE = 'CHANGE_KEY_FIELD_VALUE'
 export const SUBMIT_KEY = 'SUBMIT_KEY'
+export const DELETE_KEY = 'DELETE_KEY'
 
 // app
 export const MIN_KEYS = 2

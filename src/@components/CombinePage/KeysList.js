@@ -1,18 +1,26 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { deleteKey } from '@actions'
 
-const KeysList = ({ keys }) => {
-  return (
-    <ul>
-      {
-        keys.map(key => (
-          <li key={key}>
-            {key}
-          </li>
-        ))
-      }
-    </ul>
-  )
+class KeysList extends Component {
+  handleDelete = (index) => {
+    this.props.deleteKey(index)
+  }
+
+  render() {
+    return (
+      <ul>
+        {
+          this.props.keys.map((key, i) => (
+            <li key={key}>
+              {key}
+              <button onClick={() => this.handleDelete(i)}>remove</button>
+            </li>
+          ))
+        }
+      </ul>
+    )
+  }
 }
 
 function mapStateToProps(state) {
@@ -21,4 +29,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(KeysList)
+export default connect(mapStateToProps, { deleteKey })(KeysList)

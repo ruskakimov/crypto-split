@@ -1,4 +1,4 @@
-import { CHANGE_KEY_FIELD_VALUE, SUBMIT_KEY } from '@constants'
+import { CHANGE_KEY_FIELD_VALUE, SUBMIT_KEY, DELETE_KEY } from '@constants'
 import { produceMessage } from '@helpers'
 
 function handleSubmitKey(state) {
@@ -55,6 +55,15 @@ const combinePage = (state = {
       }
     case SUBMIT_KEY:
       return handleSubmitKey(state, action)
+    case DELETE_KEY:
+      const newKeys = state.keys.slice()
+      newKeys.splice(action.payload, 1)
+      console.log(produceMessage(newKeys))
+      return {
+        message: produceMessage(newKeys),
+        ...state,
+        keys: newKeys
+      }
     default:
       return state
   }
