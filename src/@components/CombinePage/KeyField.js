@@ -12,6 +12,10 @@ class KeyField extends Component {
     this.props.submitKey()
   }
 
+  handleFocus = (e) => {
+    e.target.select()
+  }
+
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
@@ -19,6 +23,7 @@ class KeyField extends Component {
           type="text"
           value={this.props.value}
           onChange={this.handleChange}
+          onFocus={this.handleFocus}
         />
         {this.props.errorMessage}
       </form>
