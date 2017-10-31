@@ -1,13 +1,14 @@
-import { SUBMIT_MESSAGE, CHANGE_NUMBER_OF_SPLIT_KEYS } from '@constants'
+import { SUBMIT_MESSAGE, CHANGE_NUMBER_OF_SPLIT_KEYS, COPY_KEY } from '@constants'
 import { generateHexKeys } from '@helpers'
 
 const copied = (state = [], action) => {
   switch (action.type) {
     case CHANGE_NUMBER_OF_SPLIT_KEYS:
-      const num = action.payload
-      return Array(num).fill(false)
+      return Array(action.payload).fill(false)
     case SUBMIT_MESSAGE:
       return state.slice().fill(false)
+    case COPY_KEY:
+      return state.map((copied, i) => copied || i === action.payload)
     default:
       return state
   }

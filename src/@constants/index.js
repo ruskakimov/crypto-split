@@ -12,6 +12,7 @@ export const fonts = {
 // action types
 export const SUBMIT_MESSAGE = 'SUBMIT_MESSAGE'
 export const CHANGE_NUMBER_OF_SPLIT_KEYS = 'CHANGE_NUMBER_OF_SPLIT_KEYS'
+export const COPY_KEY = 'COPY_KEY'
 
 export const CHANGE_KEY_FIELD_VALUE = 'CHANGE_KEY_FIELD_VALUE'
 export const SUBMIT_KEY = 'SUBMIT_KEY'

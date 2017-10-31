@@ -4,6 +4,7 @@ import {
   CHANGE_KEY_FIELD_VALUE,
   SUBMIT_KEY,
   DELETE_KEY,
+  COPY_KEY,
 } from '@constants'
 
 export const submitMessage = (message) => {
@@ -16,9 +17,16 @@ export const submitMessage = (message) => {
 export const changeNumberOfSplitKeys = (number) => {
   return {
     type: CHANGE_NUMBER_OF_SPLIT_KEYS,
-    payload: number
+    payload: parseInt(number, 10)
   }
 } 
+
+export const copyKey = (index) => {
+  return {
+    type: COPY_KEY,
+    payload: index
+  }
+}
 
 export const changeKeyFieldValue = (value) => {
   return {
