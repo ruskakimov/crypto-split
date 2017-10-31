@@ -4,7 +4,8 @@
   "description": "Tool for splitting text into keys, which are combined with XOR to produce the original message.",
   "main": "index.js",
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "surge": "surge -d crypto-split.surge.sh"
   },
   "repository": {
     "type": "git",
