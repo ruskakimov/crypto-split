@@ -28,7 +28,6 @@ const KeysList = ({ keys, copied, copyKey }) => {
 }
 
 function mapStateToProps(state) {
-  console.log(state.split.copied)
   return {
     keys: state.split.keys,
     copied: state.split.copied,

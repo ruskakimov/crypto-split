@@ -1,7 +1,7 @@
-import { SUBMIT_MESSAGE, CHANGE_NUMBER_OF_SPLIT_KEYS, COPY_KEY } from '@constants'
+import { SUBMIT_MESSAGE, CHANGE_NUMBER_OF_SPLIT_KEYS, COPY_KEY, MIN_KEYS } from '@constants'
 import { generateHexKeys } from '@helpers'
 
-const copied = (state = [], action) => {
+const copied = (state = Array(MIN_KEYS).fill(false), action, number) => {
   switch (action.type) {
     case CHANGE_NUMBER_OF_SPLIT_KEYS:
       return Array(action.payload).fill(false)
@@ -23,7 +23,7 @@ const message = (state = '', action) => {
   }
 }
 
-const number = (state = 2, action) => {
+const number = (state = MIN_KEYS, action) => {
   switch (action.type) {
     case CHANGE_NUMBER_OF_SPLIT_KEYS:
       return action.payload
@@ -32,7 +32,7 @@ const number = (state = 2, action) => {
   }
 }
 
-const keys = (state = ['', ''], action, message) => {
+const keys = (state = Array(MIN_KEYS).fill(''), action, message) => {
   switch (action.type) {
     case SUBMIT_MESSAGE:
       return generateHexKeys(action.payload, state.length)
