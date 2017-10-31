@@ -6,11 +6,18 @@ const KeysList = ({ keys }) => {
     return <div>No message.</div>
   }
 
+  const handleFocus = (e) => {
+    e.target.select()
+    document.execCommand('copy')
+  }
+
   return (
     <ul>
       {
         keys.map((key) => (
-          <li key={key}>{key}</li>
+          <li key={key}>
+            <input onFocus={handleFocus} value={key} type="text" readOnly/>
+          </li>
         ))
       }
     </ul>
