@@ -6,34 +6,47 @@ const copied = (state = [], action) => {
     case CHANGE_NUMBER_OF_SPLIT_KEYS:
       const num = action.payload
       return Array(num).fill(false)
+    case SUBMIT_MESSAGE:
+      return state.slice().fill(false)
     default:
       return state
   }
 }
 
-const splitPage = (state = {
-  message: '',
-  number: 2,
-  keys: []
-}, action) => {
+const message = (state = '', action) => {
   switch (action.type) {
     case SUBMIT_MESSAGE:
-      const msg = action.payload
-      return {
-        ...state,
-        message: msg,
-        keys: generateHexKeys(msg, state.number),
-      }
-    case CHANGE_NUMBER_OF_SPLIT_KEYS:
-      const num = action.payload
-      return {
-        ...state,
-        number: num,
-        keys: generateHexKeys(state.message, num),
-      }
+      return action.payload
     default:
       return state
   }
 }
 
-export default splitPage
+const number = (state = 2, action) => {
+  switch (action.type) {
+    case CHANGE_NUMBER_OF_SPLIT_KEYS:
+      return action.payload
+    default:
+      return state
+  }
+}
+
+const keys = (state = ['', ''], action, message) => {
+  switch (action.type) {
+    case SUBMIT_MESSAGE:
+      return generateHexKeys(action.payload, state.length)
+    case CHANGE_NUMBER_OF_SPLIT_KEYS:
+      return generateHexKeys(message, action.payload)
+    default:
+      return state
+  }
+}
+
+export default (state = {}, action) => {
+  return {
+    message: message(state.message, action),
+    number: number(state.number, action),
+    keys: keys(state.keys, action, state.message),
+    copied: copied(state.copied, action),
+  }
+}
