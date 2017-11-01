@@ -1,7 +1,8 @@
 export const colors = {
-  black: '#222',
-  light_red: '#f57',
-  white: '#eee',
+  black: '#111',
+  neon_green: '#00ff2b',
+  green: '#36ba01',
+  dark_green: '#009a22',
 }
 
 export const fonts = {
