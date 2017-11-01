@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { colors, fonts } from '@constants'
 
 const Bar = styled.nav`
-  margin: 10px 0 50px;
+  margin: 50px 0 100px;
 `
 
 const List = styled.ul`
@@ -44,7 +44,7 @@ const NavBar = (props) => {
     <Bar>
       <List>
         <ListItem>
-          <StyledNavLink to="/">Home</StyledNavLink>
+          <StyledNavLink to="/">???</StyledNavLink>
         </ListItem>
         <ListItem>
           <StyledNavLink to="/split">Split</StyledNavLink>
