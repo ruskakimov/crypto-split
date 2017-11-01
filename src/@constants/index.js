@@ -1,6 +1,6 @@
 export const colors = {
   black: '#111',
-  neon_green: '#66ff66',
+  neon_green: '#00ff66',
   green: '#36ba01',
   dark_green: '#009a22',
 }
