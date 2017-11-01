@@ -3,6 +3,10 @@ import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { colors, fonts } from '@constants'
 
+const Bar = styled.nav`
+  margin: 20px 0 50px;
+`
+
 const List = styled.ul`
   margin: 0px;
   padding: 0px;
@@ -16,14 +20,18 @@ const ListItem = styled.li`
 `
 
 const StyledNavLink = styled(NavLink)`
-  padding: 20px;
+  padding: 0px;
   display: block;
   color: ${colors.neon_green};
-  font: 20px ${fonts.monospace};
+  font: 32px ${fonts.monospace};
   text-decoration: none;
+  letter-spacing: -2px;
+  /*border: 2px solid transparent;*/
 
   &.${props => props.activeClassName} {
-    border-bottom: 2px solid ${colors.neon_green};
+    color: ${colors.black};
+    background-color: ${colors.neon_green};
+    /*border-color: ${colors.neon_green};*/
   }
 `
 
@@ -34,7 +42,7 @@ StyledNavLink.defaultProps = {
 
 const NavBar = (props) => {
   return (
-    <nav>
+    <Bar>
       <List>
         <ListItem>
           <StyledNavLink to="/">Home</StyledNavLink>
@@ -46,7 +54,7 @@ const NavBar = (props) => {
           <StyledNavLink to="/combine">Combine</StyledNavLink>
         </ListItem>
       </List>
-    </nav>
+    </Bar>
   )
 }
 
