@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import { colors, foo } from '@constants'
+import { colors, fonts } from '@constants'
 
 const List = styled.ul`
   margin: 0px;
@@ -18,12 +18,12 @@ const ListItem = styled.li`
 const StyledNavLink = styled(NavLink)`
   padding: 20px;
   display: block;
-  color: ${colors.black};
+  color: ${colors.neon_green};
+  font: 20px ${fonts.monospace};
   text-decoration: none;
 
   &.${props => props.activeClassName} {
-    color: ${colors.white};
-    background: ${colors.light_red};
+    border-bottom: 2px solid ${colors.neon_green};
   }
 `
 
