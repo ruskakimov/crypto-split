@@ -19,7 +19,7 @@ const KeysList = ({ keys, copied, copyKey }) => {
         keys.map((key, i) => (
           <li key={key}>
             <input onFocus={e => handleFocus(e, i)} value={key} type="text" readOnly/>
-            { copied[i] ? 'copied' : 'not copied' }
+            { copied[i] ? '[copied]' : '' }
           </li>
         ))
       }
