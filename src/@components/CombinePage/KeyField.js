@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { changeKeyFieldValue, submitKey } from '@actions'
+import Input from '@components/global/Input'
 
 class KeyField extends Component {
   handleChange = (e) => {
@@ -19,7 +20,8 @@ class KeyField extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input
+        Enter key:
+        <Input
           type="text"
           value={this.props.value}
           onChange={this.handleChange}
