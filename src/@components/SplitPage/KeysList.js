@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { copyKey } from '@actions'
 import styled from 'styled-components'
 import Input from '@components/global/Input'
+import Button from '@components/global/Button'
 
 
 const List = styled.ul`
@@ -55,7 +56,7 @@ class KeysList extends Component {
                 Key #{i + 1}
               </div>
               <div>
-                <button onClick={() => this.handleCopy(i)}>copy</button>
+                <Button onClick={() => this.handleCopy(i)}>copy</Button>
               </div>
               <Input
                 innerRef={comp => this.inputs[i] = comp}
