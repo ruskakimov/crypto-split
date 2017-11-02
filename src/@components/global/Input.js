@@ -2,7 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { colors, fonts } from '@constants'
 
-export default styled.input`
+export default styled.input.attrs({
+  spellCheck: false
+})`
   color: ${colors.neon_green};
   font: 16px ${fonts.monospace};
   background-color: transparent;
