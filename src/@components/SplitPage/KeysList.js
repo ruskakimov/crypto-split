@@ -1,6 +1,19 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { copyKey } from '@actions'
+import styled from 'styled-components'
+import Input from '@components/global/Input'
+
+
+const List = styled.ul`
+  padding: 0;
+  margin: 0;
+`
+
+const ListItem = styled.li`
+  display: block;
+  margin: 20px 0;
+`
 
 const KeysList = ({ keys, copied, copyKey }) => {
   if (keys.length === 0 || keys[0] === '') {
@@ -14,16 +27,16 @@ const KeysList = ({ keys, copied, copyKey }) => {
   }
 
   return (
-    <ul>
+    <List>
       {
         keys.map((key, i) => (
-          <li key={key}>
-            <input onFocus={e => handleFocus(e, i)} value={key} type="text" readOnly/>
+          <ListItem key={key}>
+            <Input onFocus={e => handleFocus(e, i)} value={key} type="text" readOnly/>
             { copied[i] ? '[copied]' : '' }
-          </li>
+          </ListItem>
         ))
       }
-    </ul>
+    </List>
   )
 }
 
