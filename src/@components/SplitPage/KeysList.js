@@ -13,6 +13,14 @@ const List = styled.ul`
 const ListItem = styled.li`
   display: block;
   margin: 20px 0;
+  font-size: 16px;
+  display: grid;
+  grid-template-columns: 100px 50px 1fr 100px;
+  grid-gap: 5px;
+`
+
+const CopyStatus = styled.div`
+  text-align: center;
 `
 
 const KeysList = ({ keys, copied, copyKey }) => {
@@ -31,8 +39,19 @@ const KeysList = ({ keys, copied, copyKey }) => {
       {
         keys.map((key, i) => (
           <ListItem key={key}>
+            <div>
+              Key #{i + 1}
+            </div>
+
+            <div>
+              <button>copy</button>
+            </div>
+
             <Input onFocus={e => handleFocus(e, i)} value={key} type="text" readOnly/>
-            { copied[i] ? '[copied]' : '' }
+
+            <CopyStatus>
+              { copied[i] ? '[copied]' : '' }
+            </CopyStatus>
           </ListItem>
         ))
       }
