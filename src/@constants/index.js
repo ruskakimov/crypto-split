@@ -3,6 +3,7 @@ export const colors = {
   neon_green: '#00ff66',
   green: '#36ba01',
   dark_green: '#009a22',
+  red: '#f00',
 }
 
 export const fonts = {

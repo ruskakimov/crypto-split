@@ -2,6 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { changeKeyFieldValue, submitKey } from '@actions'
 import Input from '@components/global/Input'
+import styled from 'styled-components'
+import { colors } from '@constants'
+
+const ErrorMessage = styled.div`
+  color: ${colors.red};
+`
 
 class KeyField extends Component {
   handleChange = (e) => {
@@ -27,7 +33,9 @@ class KeyField extends Component {
           onChange={this.handleChange}
           onFocus={this.handleFocus}
         />
-        {this.props.errorMessage}
+        <ErrorMessage>
+          {this.props.errorMessage}
+        </ErrorMessage>
       </form>
     )
   }
