@@ -9,12 +9,14 @@ export default styled.input.attrs({
   font: 16px ${fonts.monospace};
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid ${colors.neon_green};
+  border-bottom: 1px solid ${colors.dim_green};
   flex-grow: 1;
   padding: 0 5px 5px;
   text-overflow: ellipsis;
+  transition: border-color 0.15s;
 
   &:focus {
     outline: none;
+    border-color: ${colors.neon_green};
   };
 `
