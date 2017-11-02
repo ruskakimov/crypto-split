@@ -14,11 +14,21 @@ const Prompt = styled.span`
   font: 16px ${fonts.monospace};
 `
 
+const handleFocus = e => {
+  const t = e.target
+  t.selectionStart = t.selectionEnd = t.value.length
+}
+
 export default ({ value, onChange }) => {
   return (
     <Wrap>
       <Prompt>></Prompt>
-      <Input value={value} onChange={onChange} />
+      <Input
+        innerRef={comp => comp && comp.focus()}
+        onFocus={handleFocus}
+        value={value}
+        onChange={onChange}
+      />
     </Wrap>
   )
 }
