@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { copyKey } from '@actions'
 import styled from 'styled-components'
@@ -23,40 +23,56 @@ const CopyStatus = styled.div`
   text-align: center;
 `
 
-const KeysList = ({ keys, copied, copyKey }) => {
-  if (keys.length === 0 || keys[0] === '') {
-    return <div>No message.</div>
+class KeysList extends Component {
+  constructor(props) {
+    super(props)
+    this.inputs = {}
   }
 
-  const handleFocus = (e, i) => {
+  handleFocus = (e) => {
     e.target.select()
-    document.execCommand('copy')
-    copyKey(i)
   }
 
-  return (
-    <List>
-      {
-        keys.map((key, i) => (
-          <ListItem key={key}>
-            <div>
-              Key #{i + 1}
-            </div>
+  handleCopy = (i) => {
+    this.inputs[i].select()
+    document.execCommand('copy')
+    this.props.copyKey(i)
+  }
 
-            <div>
-              <button>copy</button>
-            </div>
+  render() {
+    const { keys, copied } = this.props;
 
-            <Input onFocus={e => handleFocus(e, i)} value={key} type="text" readOnly/>
+    if (keys.length === 0 || keys[0] === '') {
+      return <div>No message.</div>
+    }
 
-            <CopyStatus>
-              { copied[i] ? '[copied]' : '' }
-            </CopyStatus>
-          </ListItem>
-        ))
-      }
-    </List>
-  )
+    return (
+      <List>
+        {
+          keys.map((key, i) => (
+            <ListItem key={key}>
+              <div>
+                Key #{i + 1}
+              </div>
+              <div>
+                <button onClick={() => this.handleCopy(i)}>copy</button>
+              </div>
+              <Input
+                innerRef={comp => this.inputs[i] = comp}
+                onFocus={this.handleFocus}
+                value={key}
+                type="text"
+                readOnly
+              />
+              <CopyStatus>
+                { copied[i] ? '[copied]' : '' }
+              </CopyStatus>
+            </ListItem>
+          ))
+        }
+      </List>
+    )
+  }
 }
 
 function mapStateToProps(state) {
