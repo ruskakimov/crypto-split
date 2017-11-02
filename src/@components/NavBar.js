@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { colors, fonts } from '@constants'
 
 const Bar = styled.nav`
-  margin: 50px 0 100px;
+  margin: 50px 0;
 `
 
 const List = styled.ul`
