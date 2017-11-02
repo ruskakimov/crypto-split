@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { submitMessage, changeMessage } from '@actions'
+import Input from '@components/global/Input'
 
 class EntryForm extends Component {
   handleSubmit = (e) => {
@@ -15,7 +16,8 @@ class EntryForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input
+        Enter secret message:
+        <Input
           type="text"
           value={this.props.message}
           onChange={this.handleChange}
