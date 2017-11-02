@@ -7,3 +7,8 @@ body {
   background-color: #00ff66;
   color: #111;
 }
+
+::-moz-selection {
+  background-color: #00ff66;
+  color: #111;
+}
