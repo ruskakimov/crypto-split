@@ -12,6 +12,7 @@ export default styled.input.attrs({
   border-bottom: 1px solid ${colors.neon_green};
   flex-grow: 1;
   padding: 0 5px 5px;
+  text-overflow: ellipsis;
 
   &:focus {
     outline: none;
