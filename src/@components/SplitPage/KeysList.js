@@ -2,20 +2,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { copyKey } from '@actions'
 import styled from 'styled-components'
-import { Input, Button } from '@components/global'
+import { List, ListItem, Input, Button } from '@components/global'
 
-const List = styled.ul`
-  padding: 0;
-  margin: 50px 0;
-`
-
-const ListItem = styled.li`
-  display: block;
-  margin: 20px 0;
-  font-size: 16px;
-  display: grid;
+const SplitListItem = ListItem.extend`
   grid-template-columns: 50px 1fr 100px;
-  grid-gap: 5px;
 `
 
 const CopyStatus = styled.div`
@@ -49,7 +39,7 @@ class KeysList extends Component {
       <List>
         {
           keys.map((key, i) => (
-            <ListItem key={key}>
+            <SplitListItem key={key}>
               <div>
                 <Button onClick={() => this.handleCopy(i)}>copy</Button>
               </div>
@@ -63,7 +53,7 @@ class KeysList extends Component {
               <CopyStatus>
                 { copied[i] ? '[copied]' : '' }
               </CopyStatus>
-            </ListItem>
+            </SplitListItem>
           ))
         }
       </List>
