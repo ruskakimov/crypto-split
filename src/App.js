@@ -11,6 +11,7 @@ import CombinePage from '@components/CombinePage'
 const Wrapper = styled.div`
   margin: 0 auto;
   max-width: 800px;
+  padding: 0 10px;
   color: ${colors.neon_green};
   font-family: ${fonts.monospace}
 `
