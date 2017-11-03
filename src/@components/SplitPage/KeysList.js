@@ -5,11 +5,11 @@ import styled from 'styled-components'
 import { List, ListItem, Input, Button } from '@components/global'
 
 const SplitListItem = ListItem.extend`
-  grid-template-columns: 50px 1fr 100px;
+  grid-template-columns: 50px 1fr 80px;
 `
 
 const CopyStatus = styled.div`
-  text-align: center;
+  text-align: right;
 `
 
 class KeysList extends Component {

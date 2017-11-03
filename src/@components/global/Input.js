@@ -5,6 +5,7 @@ import { colors, fonts } from '@constants'
 export default styled.input.attrs({
   spellCheck: false
 })`
+  min-width: 50px;
   color: ${colors.neon_green};
   font: 16px ${fonts.monospace};
   background-color: transparent;
