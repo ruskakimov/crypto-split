@@ -5,14 +5,9 @@ import styled from 'styled-components'
 import Input from '@components/global/Input'
 import Button from '@components/global/Button'
 
-const H2 = styled.h2`
-  font-size: 18px;
-  font-weight: normal;
-`
-
 const List = styled.ul`
   padding: 0;
-  margin: 0;
+  margin: 50px 0;
 `
 
 const ListItem = styled.li`
@@ -52,30 +47,27 @@ class KeysList extends Component {
     }
 
     return (
-      <div>
-        <H2>Keys:</H2>
-        <List>
-          {
-            keys.map((key, i) => (
-              <ListItem key={key}>
-                <div>
-                  <Button onClick={() => this.handleCopy(i)}>copy</Button>
-                </div>
-                <Input
-                  innerRef={comp => this.inputs[i] = comp}
-                  onFocus={this.handleFocus}
-                  value={key}
-                  type="text"
-                  readOnly
-                />
-                <CopyStatus>
-                  { copied[i] ? '[copied]' : '' }
-                </CopyStatus>
-              </ListItem>
-            ))
-          }
-        </List>
-      </div>
+      <List>
+        {
+          keys.map((key, i) => (
+            <ListItem key={key}>
+              <div>
+                <Button onClick={() => this.handleCopy(i)}>copy</Button>
+              </div>
+              <Input
+                innerRef={comp => this.inputs[i] = comp}
+                onFocus={this.handleFocus}
+                value={key}
+                type="text"
+                readOnly
+              />
+              <CopyStatus>
+                { copied[i] ? '[copied]' : '' }
+              </CopyStatus>
+            </ListItem>
+          ))
+        }
+      </List>
     )
   }
 }
