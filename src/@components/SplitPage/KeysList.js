@@ -5,6 +5,10 @@ import styled from 'styled-components'
 import Input from '@components/global/Input'
 import Button from '@components/global/Button'
 
+const H2 = styled.h2`
+  font-size: 18px;
+  font-weight: normal;
+`
 
 const List = styled.ul`
   padding: 0;
@@ -16,7 +20,7 @@ const ListItem = styled.li`
   margin: 20px 0;
   font-size: 16px;
   display: grid;
-  grid-template-columns: 100px 50px 1fr 100px;
+  grid-template-columns: 50px 1fr 100px;
   grid-gap: 5px;
 `
 
@@ -44,34 +48,34 @@ class KeysList extends Component {
     const { keys, copied } = this.props;
 
     if (keys.length === 0 || keys[0] === '') {
-      return <div>No message.</div>
+      return <div></div>
     }
 
     return (
-      <List>
-        {
-          keys.map((key, i) => (
-            <ListItem key={key}>
-              <div>
-                Key #{i + 1}
-              </div>
-              <div>
-                <Button onClick={() => this.handleCopy(i)}>copy</Button>
-              </div>
-              <Input
-                innerRef={comp => this.inputs[i] = comp}
-                onFocus={this.handleFocus}
-                value={key}
-                type="text"
-                readOnly
-              />
-              <CopyStatus>
-                { copied[i] ? '[copied]' : '' }
-              </CopyStatus>
-            </ListItem>
-          ))
-        }
-      </List>
+      <div>
+        <H2>Keys:</H2>
+        <List>
+          {
+            keys.map((key, i) => (
+              <ListItem key={key}>
+                <div>
+                  <Button onClick={() => this.handleCopy(i)}>copy</Button>
+                </div>
+                <Input
+                  innerRef={comp => this.inputs[i] = comp}
+                  onFocus={this.handleFocus}
+                  value={key}
+                  type="text"
+                  readOnly
+                />
+                <CopyStatus>
+                  { copied[i] ? '[copied]' : '' }
+                </CopyStatus>
+              </ListItem>
+            ))
+          }
+        </List>
+      </div>
     )
   }
 }
