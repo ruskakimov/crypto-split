@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { deleteKey } from '@actions'
-import { Button } from '@components/global'
+import { List, ListItem, Button, Input } from '@components/global'
+
+const CombineListItem = ListItem.extend`
+  grid-template-columns: 70px 1fr;
+`
 
 class KeysList extends Component {
   handleDelete = (index) => {
@@ -10,16 +14,18 @@ class KeysList extends Component {
 
   render() {
     return (
-      <ul>
+      <List>
         {
           this.props.keys.map((key, i) => (
-            <li key={key}>
-              {key}
-              <Button onClick={() => this.handleDelete(i)}>remove</Button>
-            </li>
+            <CombineListItem key={key}>
+              <div>
+                <Button onClick={() => this.handleDelete(i)}>remove</Button>
+              </div>
+              <Input value={key} readOnly/>
+            </CombineListItem>
           ))
         }
-      </ul>
+      </List>
     )
   }
 }
