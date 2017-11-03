@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { deleteKey } from '@actions'
+import { Button } from '@components/global'
 
 class KeysList extends Component {
   handleDelete = (index) => {
@@ -14,7 +15,7 @@ class KeysList extends Component {
           this.props.keys.map((key, i) => (
             <li key={key}>
               {key}
-              <button onClick={() => this.handleDelete(i)}>remove</button>
+              <Button onClick={() => this.handleDelete(i)}>remove</Button>
             </li>
           ))
         }

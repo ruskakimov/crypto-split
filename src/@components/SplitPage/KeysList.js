@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { copyKey } from '@actions'
 import styled from 'styled-components'
-import Input from '@components/global/Input'
-import Button from '@components/global/Button'
+import { Input, Button } from '@components/global'
 
 const List = styled.ul`
   padding: 0;
