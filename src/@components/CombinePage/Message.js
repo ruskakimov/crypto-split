@@ -1,9 +1,26 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import styled from 'styled-components'
+import { colors, fonts } from '@constants'
+
+const Wrap = styled.div`
+  text-align: center;
+`
+
+const MessageText = styled.h2`
+  margin: 10px 0;
+  font: 24px ${fonts.monospace};
+  color: ${colors.neon_green};
+`
 
 const Message = ({ message }) => {
+  if (!message) return <div></div>
+
   return (
-    <h2>{message}</h2>
+    <Wrap>
+      Decoded message:
+      <MessageText>{message}</MessageText>
+    </Wrap>
   )
 }
 
