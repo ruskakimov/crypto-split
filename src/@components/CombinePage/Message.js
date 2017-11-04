@@ -11,6 +11,7 @@ const MessageText = styled.h2`
   margin: 10px 0;
   font: 24px ${fonts.monospace};
   color: ${colors.neon_green};
+  word-wrap: break-word;
 `
 
 const Message = ({ message }) => {
