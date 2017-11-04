@@ -11,7 +11,7 @@ function handleSubmitKey(state) {
     }
   })
 
-  if (enteredKey.length % 4) {
+  if (enteredKey.length === 0 || enteredKey.length % 4) {
     return stateWithError('Invalid key length!')
   }
 
