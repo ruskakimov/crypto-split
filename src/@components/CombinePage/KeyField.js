@@ -7,6 +7,7 @@ import { PromptInput } from '@components/global'
 
 const ErrorMessage = styled.div`
   color: ${colors.red};
+  margin-bottom: 20px;
 `
 
 class KeyField extends Component {
