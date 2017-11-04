@@ -1,9 +1,9 @@
 export const colors = {
   black: '#111',
   neon_green: '#00ff66',
-  green: '#36ba01',
   dim_green: '#00ff6633',
   red: '#f00',
+  yellow: '#ff0'
 }
 
 export const fonts = {
