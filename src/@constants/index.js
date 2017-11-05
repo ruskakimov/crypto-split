@@ -8,6 +8,7 @@ export const colors = {
 
 export const fonts = {
   monospace: 'monospace',
+  warning: 'Helvetica, Arial, sans-serif'
 }
 
 

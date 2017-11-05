@@ -7,6 +7,7 @@ import NavBar from '@components/NavBar'
 import MainPage from '@components/MainPage'
 import SplitPage from '@components/SplitPage'
 import CombinePage from '@components/CombinePage'
+import Warning from '@components/Warning'
 
 const Wrapper = styled.div`
   margin: 0 auto;
@@ -19,6 +20,7 @@ const Wrapper = styled.div`
 const App = (props) => {
   return (
     <Wrapper>
+      <Warning/>
       <header>
         <NavBar />
       </header>
