@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import { colors, fonts } from '@constants'
+import { colors, fonts } from '@/constants'
 
 const Bar = styled.nav`
   margin: 50px 0;

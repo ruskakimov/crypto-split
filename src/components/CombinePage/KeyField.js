@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { changeKeyFieldValue, submitKey } from '@actions'
+import { changeKeyFieldValue, submitKey } from '@/actions'
 import styled from 'styled-components'
-import { colors } from '@constants'
-import { PromptInput } from '@components/global'
+import { colors } from '@/constants'
+import { PromptInput } from '@/components/global'
 
 const ErrorMessage = styled.div`
   color: ${colors.red};

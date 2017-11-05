@@ -1,13 +1,13 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import styled from 'styled-components'
-import { colors, fonts } from '@constants'
+import { colors, fonts } from '@/constants'
 
-import NavBar from '@components/NavBar'
-import MainPage from '@components/MainPage'
-import SplitPage from '@components/SplitPage'
-import CombinePage from '@components/CombinePage'
-import Warning from '@components/Warning'
+import NavBar from '@/components/NavBar'
+import MainPage from '@/components/MainPage'
+import SplitPage from '@/components/SplitPage'
+import CombinePage from '@/components/CombinePage'
+import Warning from '@/components/Warning'
 
 const Wrapper = styled.div`
   margin: 0 auto;

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { colors, fonts } from '@constants'
+import { colors, fonts } from '@/constants'
 
 export default styled.input.attrs({
   spellCheck: false

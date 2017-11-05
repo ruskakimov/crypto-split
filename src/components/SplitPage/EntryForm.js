@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { submitMessage, changeMessage } from '@actions'
-import { PromptInput } from '@components/global'
+import { submitMessage, changeMessage } from '@/actions'
+import { PromptInput } from '@/components/global'
 
 class EntryForm extends Component {
   handleSubmit = (e) => {

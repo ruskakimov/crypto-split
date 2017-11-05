@@ -5,7 +5,7 @@ import {
   SUBMIT_KEY,
   DELETE_KEY,
   COPY_KEY,
-} from '@constants'
+} from '@/constants'
 
 export const submitMessage = (message) => {
   return {

@@ -1,3 +1,5 @@
+var path = require('path')
+
 module.exports = {
   entry: [
     './src/index.js'
@@ -23,7 +25,10 @@ module.exports = {
     ]
   },
   resolve: {
-    modules: ['src', 'node_modules'],
+    alias: {
+      '@': path.resolve(__dirname, 'src')
+    },
+    modules: ['node_modules'],
     extensions: ['.js', '.jsx', '.css']
   },
   devServer: {

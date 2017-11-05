@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { copyKey } from '@actions'
+import { copyKey } from '@/actions'
 import styled from 'styled-components'
-import { List, ListItem, Input, Button } from '@components/global'
+import { List, ListItem, Input, Button } from '@/components/global'
 
 const SplitListItem = ListItem.extend`
   grid-template-columns: 50px 1fr 80px;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
-import { colors, fonts } from '@constants'
+import { colors, fonts } from '@/constants'
 import readme from '../../README.md'
 
 const Article = styled(ReactMarkdown)`

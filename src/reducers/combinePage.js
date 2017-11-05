@@ -1,5 +1,5 @@
-import { CHANGE_KEY_FIELD_VALUE, SUBMIT_KEY, DELETE_KEY } from '@constants'
-import { produceMessage } from '@helpers'
+import { CHANGE_KEY_FIELD_VALUE, SUBMIT_KEY, DELETE_KEY } from '@/constants'
+import { produceMessage } from '@/helpers'
 
 function handleSubmitKey(state) {
   const enteredKey = state.keyField.value

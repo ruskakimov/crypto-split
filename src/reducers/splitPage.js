@@ -1,5 +1,5 @@
-import { SUBMIT_MESSAGE, CHANGE_NUMBER_OF_SPLIT_KEYS, COPY_KEY, MIN_KEYS } from '@constants'
-import { generateHexKeys } from '@helpers'
+import { SUBMIT_MESSAGE, CHANGE_NUMBER_OF_SPLIT_KEYS, COPY_KEY, MIN_KEYS } from '@/constants'
+import { generateHexKeys } from '@/helpers'
 
 const copied = (state = Array(MIN_KEYS).fill(false), action, number) => {
   switch (action.type) {

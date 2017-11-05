@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { deleteKey } from '@actions'
-import { List, ListItem, Button, Input } from '@components/global'
+import { deleteKey } from '@/actions'
+import { List, ListItem, Button, Input } from '@/components/global'
 
 const CombineListItem = ListItem.extend`
   grid-template-columns: 70px 1fr;

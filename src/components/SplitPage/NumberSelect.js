@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { changeNumberOfSplitKeys } from '@actions'
-import { MIN_KEYS, MAX_KEYS } from '@constants'
+import { changeNumberOfSplitKeys } from '@/actions'
+import { MIN_KEYS, MAX_KEYS } from '@/constants'
 import styled from 'styled-components'
-import { colors } from '@constants'
+import { colors } from '@/constants'
 
 const Select = styled.select`
   background: ${colors.black};

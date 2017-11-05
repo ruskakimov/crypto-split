@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { colors, fonts } from '@constants'
-import { Input } from '@components/global'
+import { colors, fonts } from '@/constants'
+import { Input } from '@/components/global'
 
 const Wrap = styled.div`
   display: flex;

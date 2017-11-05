@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
-import { colors, fonts } from '@constants'
+import { colors, fonts } from '@/constants'
 import warning from '../../WARNING.md'
 
 const WarningBox = styled(ReactMarkdown)`
