@@ -9,5 +9,4 @@ A trivial implementation of secret sharing. Text message is split into *N* hex k
 > secret can be a password, credit card credentials, etc.
 
 ## References
-- [Wikipedia](https://en.wikipedia.org/wiki/Secret_sharing#Trivial_secret_sharing)
-- [Cipher machines and cryptology](http://users.telenet.be/d.rijmenants/en/secretsplitting.htm)
+- [Wikipedia](https://en.wikipedia.org/wiki/One-time_pad)
